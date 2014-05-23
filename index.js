@@ -3,8 +3,10 @@
 var PluginError = require('gulp-util').PluginError;
 var fs = require('fs');
 var through = require('through2');
+var node_path = require('path');
 
-var common = fs.readFileSync('common.jade');
+var file = node_path.join(__dirname, 'jade', 'common.jade');
+var common = fs.readFileSync(file);
 
 module.exports = function (options){
   options = options || {};
