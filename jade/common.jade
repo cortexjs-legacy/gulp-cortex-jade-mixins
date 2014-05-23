@@ -1,0 +1,7 @@
+mixin facade(name)
+  - var abc = 'facade({mod:\'' + name + '\'});'
+  script= abc
+
+mixin framework
+  script(src='../../../neuron/latest/neuron.js')
+  script neuron.config({path:'../../../'});
