@@ -1,5 +1,5 @@
 mixin facade(name)
-  - var abc = '{{{facade "' + name + '"}}}'
+  - var abc = name ? '{{{facade "' + name + '"}}}' : '{{{facade}}}'
   != abc
 
 mixin css(link)
