@@ -1,6 +1,11 @@
 mixin facade(name)
-  - var abc = name ? '{{{facade "' + name + '"}}}' : '{{{facade}}}'
-  != abc
+  if name
+    |{{{facade "#{name}"}}}
+  else
+    |{{{facade}}}
 
 mixin css(link)
-  link(type='text/css', rel='stylesheet', href= link)
+  link(type='text/css', rel='stylesheet', href!='{{{static "#{link}"}}}')
+
+mixin static(link)
+  |{{{static "#{link}"}}}
